@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="Capa_1"
+   enable-background="new 0 0 512.044 512.044"
+   height="512"
+   viewBox="0 0 512.044 512.044"
+   width="512"
+   version="1.1"
+   sodipodi:docname="walk.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)"
+   inkscape:export-filename="D:\Development\Projects\stryde_app\images\logo.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
+  <metadata
+     id="metadata20">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs18" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     id="namedview16"
+     showgrid="false"
+     inkscape:zoom="0.41992188"
+     inkscape:cx="-150.10276"
+     inkscape:cy="436.6723"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g11"
+     inkscape:document-rotation="0" />
+  <linearGradient
+     id="SVGID_1_"
+     gradientUnits="userSpaceOnUse"
+     x1="256.022"
+     x2="256.022"
+     y1="512.044"
+     y2="0">
+    <stop
+       offset="0"
+       stop-color="#a93aff"
+       id="stop2"
+       style="stop-color:#1de9b6;stop-opacity:1" />
+    <stop
+       offset="1"
+       stop-color="#ff81ff"
+       id="stop4"
+       style="stop-color:#00bfa5;stop-opacity:1" />
+  </linearGradient>
+  <g
+     id="g13">
+    <g
+       id="g11">
+      <g
+         id="g9"
+         style="fill:#00bfa5;fill-opacity:1">
+        <path
+           d="m164.279 91c-49.508 1.084-103.257 52.937-103.257 129.565 0 40.166 4.849 67.456 8.057 85.518.806 4.585 1.523 8.54 1.992 11.938 1.025 7.427 7.368 12.949 14.854 12.949h125.698c9.098 0 16.009-8.001 14.883-16.86-2.549-20.361 2.08-48.823 6.533-76.362 3.926-24.185 7.983-49.189 7.983-71.777 0-43.911-37.046-76.244-76.743-74.971zm183.501-91c-45.99-.097-76.758 36.959-76.758 75.971 0 22.588 4.058 47.593 7.983 71.777 4.453 27.539 9.082 56.001 6.533 76.362-.542 4.263.791 8.555 3.633 11.792 2.856 3.223 6.943 5.068 11.25 5.068h125.699c7.485 0 13.828-5.522 14.854-12.949.469-3.398 1.187-7.354 1.992-11.938 3.208-18.062 8.057-45.352 8.057-85.518-.001-76.786-53.992-129.485-103.243-130.565zm-128.057 360.971h-124.204c-9.266 0-16.285 8.319-14.81 17.417l11.382 70.492c5.562 35.47 36.7 63.164 73.916 63.164 43.953 0 74.573-36.867 75.015-78.281-.337-23.687-3.354-43.627-6.563-60.59-1.332-7.075-7.529-12.202-14.736-12.202zm196.802-90h-124.204c-7.207 0-13.403 5.127-14.736 12.202-3.223 17.007-6.24 35.991-6.563 60.864.414 40.483 31.585 77.021 75.015 77.021 37.194 0 68.379-27.764 73.872-63.062l11.411-69.595c1.501-9.099-5.52-17.43-14.795-17.43z"
+           fill="url(#SVGID_1_)"
+           id="path7"
+           style="fill-opacity:1;fill:#00bfa5" />
+      </g>
+    </g>
+  </g>
+</svg>

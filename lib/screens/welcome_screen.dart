@@ -1,4 +1,7 @@
+//.. Welcome screen that allows user to connect to navigate to BLE pairing screen ..//
+
 import 'package:flutter/material.dart';
+import 'package:stryde_app/components/rounded_button.dart';
 import 'package:stryde_app/screens/pairing_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -42,29 +45,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               height: 20.0,
             ),
             //..PAIRING BUTTON..//
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Material(
-                clipBehavior: Clip.antiAlias,
-                borderRadius: BorderRadius.circular(25.0),
-                elevation: 3.0,
-                child: MaterialButton(
-                  child: Text(
-                    'Connect to Device',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  minWidth: 200,
-                  height: 50.0,
-                  color: Colors.tealAccent[700],
-                  onPressed: () {
-                    Navigator.pushNamed(context, PairingScreen.id);
-                  },
-                ),
-              ),
+            RoundedButton(
+              title: 'Connect to Device',
+              onPressed: () {
+                Navigator.pushNamed(context, PairingScreen.id);
+              },
             )
           ],
         ),
