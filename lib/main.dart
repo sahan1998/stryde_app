@@ -22,3 +22,5 @@ class Stryde extends StatelessWidget {
     );
   }
 }
+// command to connect to phone before running
+// adb connect 192.168.10.14:5555

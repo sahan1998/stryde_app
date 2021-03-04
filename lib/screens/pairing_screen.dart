@@ -15,19 +15,133 @@ class PairingScreen extends StatefulWidget {
 
 class _PairingScreenState extends State<PairingScreen> {
   bool dev1Connected = false;
-  bool dev2Connected = false;
+  bool dev2Connected = true; //TODO: remember to enable right shoe
   FlutterBlue flutterBlue = FlutterBlue.instance;
+  BluetoothDevice leftShoe;
+  BluetoothDevice rightShoe;
+  List<ScanResult> deviceList;
 
   @override
   void initState() {
     super.initState();
-    flutterBlue.startScan(timeout: Duration(seconds: 4));
+    flutterBlue.startScan();
     print('Scan Started');
+
+    // Connecting to device
+    _connect2Device();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    flutterBlue.stopScan();
+  }
+
+  //Attempts to locate device and connect
+  void _connect2Device() {
+    flutterBlue.scanResults.listen((results) {
+      for (var result in results) {
+        if (result.device.name == 'Left Shoe') {
+          leftShoe = result.device;
+          leftShoe.connect();
+          print('LEFT connected!!!');
+          _isConnected(leftShoe.name);
+        } else if (result.device.name == 'Right Shoe') {
+          // rightShoe = result.device;
+          // rightShoe.connect();
+          // print('RIGHT connected!!!!');
+          // _isConnected(rightShoe.name);
+        }
+      }
+    });
+  }
+
+  //Check whether device is connected and show status
+  void _isConnected(String name) {
+    if (name == 'Left Shoe') {
+      if (leftShoe == null) {
+        setState(() {
+          dev1Connected = false;
+        });
+      } else {
+        setState(() {
+          dev1Connected = true;
+        });
+      }
+    } else if (name == 'Right Shoe') {
+      // if (rightShoe == null) {
+      //   setState(() {
+      //     dev2Connected = false;
+      //   });
+      // } else {
+      //   setState(() {
+      //     dev2Connected = true;
+      //   });
+      // }
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: Stack(
+        children: [
+          // Home Button
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: Padding(
+              padding: EdgeInsets.only(left: 40, bottom: 20),
+              child: FloatingActionButton(
+                heroTag: null,
+                elevation: 3,
+                child: Icon(
+                  Icons.home,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  if (leftShoe != null) {
+                    leftShoe.disconnect();
+                  }
+                  if (rightShoe != null) {
+                    rightShoe.disconnect();
+                  }
+                  Navigator.pop(context);
+                },
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 20),
+              child: FloatingActionButton.extended(
+                label: Text(
+                  'Reset',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16.0),
+                ),
+                icon: Icon(
+                  Icons.refresh,
+                  color: Colors.white,
+                ),
+                elevation: 3,
+                onPressed: () {
+                  // Disconnect the devices if connected and Try reconnecting
+                  if (leftShoe != null) {
+                    leftShoe.disconnect();
+                  }
+                  if (rightShoe != null) {
+                    rightShoe.disconnect();
+                  }
+                  _connect2Device();
+                },
+              ),
+            ),
+          ),
+        ],
+      ),
       body: Padding(
         padding: EdgeInsets.only(left: 25, right: 25.0, top: 40),
         child: Column(
@@ -115,7 +229,12 @@ class _PairingScreenState extends State<PairingScreen> {
                 ? RoundedButton(
                     title: 'Begin Test',
                     onPressed: () {
-                      Navigator.pushNamed(context, InfoScreen.id);
+                      flutterBlue.stopScan();
+                      Navigator.pushReplacementNamed(context, InfoScreen.id,
+                          arguments: {
+                            'device1': leftShoe,
+                            'device2': rightShoe
+                          });
                     },
                   )
                 : SizedBox()
